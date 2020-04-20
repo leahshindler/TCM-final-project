@@ -3,10 +3,9 @@ Jamie Begleiter/Leah Shindler final project
 
 import requests, json, pprint # for the API data
 
-print('What holiday is coming up next?')
-holiday = input()
+# yourHoliday = Jamie's API variable to be carried into this half of the code
 
-url = f'https://api.spoonacular.com/recipes/random?number=1&tags={holiday}&apiKey=6f873121665c40adb0c1fa22d3b87c09'
+url = f'https://api.spoonacular.com/recipes/random?number=1&tags={yourHoliday}&apiKey=6f873121665c40adb0c1fa22d3b87c09'
 response = requests.get(url)
 response.raise_for_status()  # check for errors
 
@@ -17,7 +16,7 @@ celebrating = 'yes'
 cook = 'no'
 answer = 'yes'
 
-print('Are you going to be celebrating this holiday?')
+print('Are you going to be celebrating' + yourHoliday + '?')
 celebrating = input()
 if celebrating == 'yes':
     print('Are you going to cook for the meal?')
